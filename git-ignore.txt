@@ -1,0 +1,59 @@
+# Dependency directories
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build directories
+build/
+dist/
+android/app/build/
+ios/build/
+web-build/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# IDE and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Expo
+.expo/
+.expo-shared/
+
+# Jest
+coverage/
+__tests__/__snapshots__/
+
+# Bundle artifacts
+*.jsbundle
+*.tsbundle
+
+# CocoaPods
+/ios/Pods/
+
+# Google Services
+google-services.json
+GoogleService-Info.plist
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Local Netlify folder
+.netlify
+
+# Local configuration files
+local.properties
