@@ -1,0 +1,25 @@
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { loginApi, logoutApi, validateTokenApi } from '../services/authService';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+// Async thunks for authentication
+export const login = createAsyncThunk(
+  'auth/login',
+  async ({ phoneNumber, password }, { rejectWithValue }) => {
+    try {
+      const response = await loginApi(phoneNumber, password);
+      
+      // Store the token in AsyncStorage for persistence
+      await AsyncStorage.setItem('authToken', response.token);
+      
+      return response;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const logout = createAsyncThunk(
+  'auth/logout',
+  async (_, { rejectWithValue }) => {
+    try
